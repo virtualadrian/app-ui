@@ -5,8 +5,7 @@ import { LoginModel } from "@app/auth/model/login-model";
 import { OAuthToken } from "@app/core/oauth-token";
 
 const routes = {
-  getAuthToken: () => EnvironmentService.getEndpointWithEnvironment("/oauth/token"),
-  getCompanies: () => EnvironmentService.getEndpointWithEnvironment("/company")
+  getAuthToken: () => EnvironmentService.getEndpointWithEnvironment("/oauth/token")
 };
 
 const credentialsKey = "authentication";

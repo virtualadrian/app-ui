@@ -9,6 +9,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { CoreModule } from "@app/core/core.module";
 import { AuthTokenInterceptor } from "@app/core/auth-token-interceptor";
 import { CompanyModule } from "@app/company/company.module";
+import { FormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { CompanyModule } from "@app/company/company.module";
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AuthModule,
     CoreModule,
     AppRoutingModule,

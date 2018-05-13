@@ -1,9 +1,14 @@
+Login Page<hr>
 <p>
-  login works!<br>
+  <input type="text" class="txt" name="item"  [(ngModel)]="loginModel.username">
+  <input type="password" class="txt" name="item" [(ngModel)]="loginModel.password">
+</p>
+<p>
   <input type="submit" class="btn" value="{{ getLoginText }}" (click)="login()"><br><br>
+  <br>
   <input type="submit" class="btn" value="{{ getLogoutText }}" (click)="logout()"><br><br>
 
   <br>
   <input type="submit" class="btn" value="{{ getCompaniesText }}" (click)="getCompanies()">
-
 </p>
+

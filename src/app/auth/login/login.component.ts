@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   protected getLoginText = "Log In";
   protected getLogoutText = "Log Out";
   protected getCompaniesText = "Get Companies";
+  protected loginModel: LoginModel = new LoginModel();
 
   constructor(
     private authService: AuthenticationService,
@@ -22,12 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    const login: LoginModel = new LoginModel();
-    login.username = "adrian9";
-    login.password = "adrian1";
-    login.remember = false;
-
-    this.authService.login(login);
+    this.authService.login(this.loginModel);
   }
 
   logout() {

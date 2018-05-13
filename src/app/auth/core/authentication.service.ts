@@ -21,8 +21,6 @@ const httpOptions = {
 @Injectable()
 export class AuthenticationService {
 
-  private authCredentials: OAuthToken | null;
-
   constructor(private apiClient: HttpClient) {
   }
 

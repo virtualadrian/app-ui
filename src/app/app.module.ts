@@ -7,10 +7,9 @@ import { AppComponent } from "./app.component";
 import { AuthModule } from "./auth/auth.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { CoreModule } from "@app/core/core.module";
-import { AuthTokenInterceptor } from "@app/core/auth-token-interceptor";
+import { AuthTokenInterceptor } from "@app/auth/core/auth-token-interceptor";
 import { CompanyModule } from "@app/company/company.module";
 import { FormsModule } from "@angular/forms";
-
 
 @NgModule({
   declarations: [
@@ -20,9 +19,9 @@ import { FormsModule } from "@angular/forms";
     BrowserModule,
     FormsModule,
     AuthModule,
+    CompanyModule,
     CoreModule,
     AppRoutingModule,
-    CompanyModule,
     HttpClientModule
   ],
   providers: [

@@ -10,6 +10,7 @@ import { CoreModule } from "@app/core/core.module";
 import { AuthTokenInterceptor } from "@app/auth/core/auth-token-interceptor";
 import { CompanyModule } from "@app/company/company.module";
 import { FormsModule } from "@angular/forms";
+import { LayoutModule } from "@app/layout/layout.module";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from "@angular/forms";
   imports: [
     BrowserModule,
     FormsModule,
+    LayoutModule,
     AuthModule,
     CompanyModule,
     CoreModule,

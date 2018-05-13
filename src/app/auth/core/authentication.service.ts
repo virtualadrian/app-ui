@@ -24,10 +24,6 @@ export class AuthenticationService {
   private authCredentials: OAuthToken | null;
 
   constructor(private apiClient: HttpClient) {
-    const savedCredentials = sessionStorage.getItem(credentialsKey) || localStorage.getItem(credentialsKey);
-    if (savedCredentials) {
-      this.authCredentials = JSON.parse(savedCredentials);
-    }
   }
 
   static getFormUrlEncoded(toConvert) {

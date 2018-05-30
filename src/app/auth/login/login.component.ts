@@ -10,10 +10,10 @@ import { CompanyService } from "@app/company/core/company.service";
 })
 export class LoginComponent implements OnInit {
 
-  protected getLoginText = "Log In";
-  protected getLogoutText = "Log Out";
-  protected getCompaniesText = "Get Companies";
-  protected loginModel: LoginModel = new LoginModel();
+  public getLoginText = "Log In";
+  public getLogoutText = "Log Out";
+  public getCompaniesText = "Get Companies";
+  public loginModel: LoginModel = new LoginModel();
 
   constructor(
     private authService: AuthenticationService,

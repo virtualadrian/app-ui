@@ -11,6 +11,7 @@ import { AuthTokenInterceptor } from "@app/auth/core/auth-token-interceptor";
 import { CompanyModule } from "@app/company/company.module";
 import { FormsModule } from "@angular/forms";
 import { LayoutModule } from "@app/layout/layout.module";
+import { LandingModule } from "@app/landing/landing.module";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { LayoutModule } from "@app/layout/layout.module";
     BrowserModule,
     FormsModule,
     LayoutModule,
+    LandingModule,
     AuthModule,
     CompanyModule,
     CoreModule,

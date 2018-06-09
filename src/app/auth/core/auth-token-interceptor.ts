@@ -1,5 +1,5 @@
 import { HttpEvent, HttpEventType, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import { OAuthToken } from "app/auth/model/oauth-token";
 const credentialsKey = "authentication";
 

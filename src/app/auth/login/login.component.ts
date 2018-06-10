@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthenticationService } from "@app/auth/core/authentication.service";
 import { LoginModel } from "@app/auth/model/login-model";
-import { CompanyService } from "@app/company/core/company.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-login",
@@ -16,21 +16,15 @@ export class LoginComponent implements OnInit {
   public loginModel: LoginModel = new LoginModel();
 
   constructor(
-    private authService: AuthenticationService,
-    private companyService: CompanyService) { }
+    private router: Router,
+    private authService: AuthenticationService) { }
 
   ngOnInit() {
   }
 
   login() {
-    this.authService.login(this.loginModel);
-  }
-
-  logout() {
-    this.authService.logout();
-  }
-
-  getCompanies() {
-    this.companyService.getCompanies();
+    this.authService.login(this.loginModel).then(data => {
+      window.location.href = "/company";
+    });
   }
 }

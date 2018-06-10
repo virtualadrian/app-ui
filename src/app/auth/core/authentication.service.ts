@@ -43,7 +43,7 @@ export class AuthenticationService {
     return this.authCredentials;
   }
 
-  login(loginModel: LoginModel): any {
+  login(loginModel: LoginModel): Promise<void> {
     const data: any = {
       "grant_type": "password",
       "username": loginModel.username,
@@ -53,8 +53,9 @@ export class AuthenticationService {
 
     return this.apiClient
       .post<OAuthToken>(routes.getAuthToken(), AuthenticationService.getFormUrlEncoded(data), httpOptions)
-      .subscribe(value => {
-        localStorage.setItem(credentialsKey, JSON.stringify(value));
+      .toPromise()
+      .then(token => {
+        localStorage.setItem(credentialsKey, JSON.stringify(token));
       });
   }
 

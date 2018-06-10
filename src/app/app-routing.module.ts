@@ -3,8 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { LandingPageComponent } from "@app/landing/landing-page/landing-page.component";
 
 const routes: Routes = [
-  // Fallback when no prior route is matched
-  { path: "**", redirectTo: "", pathMatch: "full", component: LandingPageComponent }
+  { path: "**", redirectTo: "", pathMatch: "full", component: LandingPageComponent } // Fallback when no prior route is matched
 ];
 
 @NgModule({

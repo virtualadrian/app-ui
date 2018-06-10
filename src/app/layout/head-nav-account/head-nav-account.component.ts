@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthenticationService } from "@app/auth/core/authentication.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-head-nav-account",
@@ -9,6 +10,7 @@ import { AuthenticationService } from "@app/auth/core/authentication.service";
 export class HeadNavAccountComponent implements OnInit {
 
   constructor(
+    private router: Router,
     private authService: AuthenticationService) { }
 
   ngOnInit() {
@@ -16,5 +18,6 @@ export class HeadNavAccountComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+    window.location.href = "/";
   }
 }

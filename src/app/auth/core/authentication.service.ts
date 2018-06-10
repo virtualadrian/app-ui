@@ -14,7 +14,7 @@ const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/x-www-form-urlencoded",
     "Accept": "application/json",
-    "Authorization": "Basic " + btoa("fooClientIdPassword" + ":" + "secret")
+    "Authorization": "Basic " + EnvironmentService.getClientAuthHeader()
   })
 };
 

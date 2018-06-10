@@ -10,4 +10,15 @@ export class EnvironmentService {
     return environment.serverUrl + relativePath;
   }
 
+  static getClientId(): string {
+    return "fooClientIdPassword";
+  }
+
+  static getClientSecret(): string {
+    return "secret";
+  }
+
+  static getClientAuthHeader(): string {
+    return btoa(EnvironmentService.getClientId() + ":" + EnvironmentService.getClientSecret());
+  }
 }

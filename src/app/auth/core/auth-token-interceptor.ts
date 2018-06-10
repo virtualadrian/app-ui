@@ -12,20 +12,25 @@ export class AuthTokenInterceptor implements HttpInterceptor {
   }
 
   private getAuthCredentials(): OAuthToken {
-    const savedCredentials = sessionStorage.getItem(credentialsKey) || localStorage.getItem(credentialsKey);
+    // get saved credentials from local storage
+    const savedCredentials = localStorage.getItem(credentialsKey) || localStorage.getItem(credentialsKey);
+
+    // parse creds if they were found
     this.authCredentials = savedCredentials ? JSON.parse(savedCredentials) : savedCredentials;
+
     return this.authCredentials;
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<HttpEventType.Response>> {
+    // refresh credentials from localStorage
     this.getSavedCredentials();
-    if (req.url.includes("oauth") || !this.authCredentials) {
-      return next.handle(req);
-    } else {
-      const authReq = req.clone({
-        setHeaders: {Authorization: `Bearer ${this.authCredentials.access_token}`}
-      });
-      return next.handle(authReq);
-    }
+    // skip for oauth calls or if we don't have the creds
+    if (req.url.includes("oauth") || !this.authCredentials) { return next.handle(req); }
+    // clone the request object, and update the headers adding the auth token
+    const authReq = req.clone({
+      setHeaders: {Authorization: `Bearer ${this.authCredentials.access_token}`}
+    });
+    // allow the request chain to continue
+    return next.handle(authReq);
   }
 }

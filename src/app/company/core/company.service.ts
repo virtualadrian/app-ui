@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { EnvironmentService } from "@app/core/environment.service";
 import { HttpClient } from "@angular/common/http";
+import { ResultSet } from "@app/core/model/result-set";
+import { CompanyModel } from "@app/company/model/company-model";
 
 
 const routes = {
@@ -14,8 +16,6 @@ export class CompanyService {
   }
 
   getCompanies() {
-    return this.apiClient.get(routes.getCompanies()).subscribe(value => {
-      console.dir(value);
-    });
+    return this.apiClient.get<ResultSet<CompanyModel>>(routes.getCompanies());
   }
 }

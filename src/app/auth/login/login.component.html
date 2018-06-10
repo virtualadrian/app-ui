@@ -6,19 +6,19 @@
 
       <div class="col-lg-6 offset-lg-3">
         <div class="home-wrapper">
-          <form role="form" id="login_form" class="intro-form">
             <h3 class="text-center"> Account Login </h3>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="User name" required="required">
+              <input type="text" [(ngModel)]="loginModel.username"
+                     class="form-control" placeholder="User name" required="required">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Password" required="required">
+              <input type="password" [(ngModel)]="loginModel.password"
+                     class="form-control" placeholder="Password" required="required">
             </div>
             <div class="form-group text-center">
               <button type="submit" (click)="login()"
                       class="btn btn-primary btn-shadow btn-rounded w-lg">Login Now</button>
             </div>
-          </form>
         </div>
       </div>
 
@@ -82,22 +82,3 @@
 </section>
 
 <!-- END LOGIN COMPONENT -->
-
-
-
-
-<div style="display: none;">
-Login Page<hr>
-<p>
-  <input type="text" class="txt" name="item"  [(ngModel)]="loginModel.username">
-  <input type="password" class="txt" name="item" [(ngModel)]="loginModel.password">
-</p>
-<p>
-  <input type="submit" class="btn" value="{{ getLoginText }}" (click)="login()"><br><br>
-  <br>
-  <input type="submit" class="btn" value="{{ getLogoutText }}" (click)="logout()"><br><br>
-
-  <br>
-  <input type="submit" class="btn" value="{{ getCompaniesText }}" (click)="getCompanies()">
-</p>
-</div>

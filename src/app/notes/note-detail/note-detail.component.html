@@ -26,10 +26,9 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <!-- NGX EDITOR -->
-
-        <app-ngx-editor [config]="editorConfig" [placeholder]="'Enter text here...'" [(ngModel)]="editorContent"></app-ngx-editor>
-        <!-- END NGX EDITOR -->
+        <!-- QUILL EDITOR -->
+        <quill-editor [(ngModel)]="editorContent" [style]="{height: '600px'}"></quill-editor>
+        <!-- END QUILL EDITOR -->
       </div>
     </div>
     <br/>

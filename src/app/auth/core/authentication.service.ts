@@ -7,7 +7,7 @@ import { JwtHelperService } from "@auth0/angular-jwt";
 const credentialsKey = "authentication";
 
 const routes = {
-  getAuthToken: () => EnvironmentService.getEndpointWithEnvironment("/oauth/token")
+  getAuthToken: () => EnvironmentService.getEndpoint("/oauth/token")
 };
 
 const httpOptions = {

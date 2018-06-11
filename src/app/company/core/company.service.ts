@@ -6,7 +6,7 @@ import { CompanyModel } from "@app/company/model/company-model";
 
 
 const routes = {
-  getCompanies: () => EnvironmentService.getEndpointWithEnvironment("/company")
+  getCompanies: () => EnvironmentService.getEndpoint("/company")
 };
 
 @Injectable()

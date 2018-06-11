@@ -12,6 +12,7 @@ import { CompanyModule } from "@app/company/company.module";
 import { FormsModule } from "@angular/forms";
 import { LandingModule } from "@app/landing/landing.module";
 import { LayoutModule } from "@app/layout/layout.module";
+import { NotesModule } from "@app/notes/notes.module";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { LayoutModule } from "@app/layout/layout.module";
     LayoutModule,
     LandingModule,
     AuthModule,
+    NotesModule,
     CompanyModule,
     CoreModule,
     AppRoutingModule,

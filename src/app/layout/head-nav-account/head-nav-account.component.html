@@ -10,6 +10,46 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="nav navbar-nav navbar-right ml-auto">
+
+        <!-- notes -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Notes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="account/notes/3">View All</a>
+            <a class="dropdown-item" href="#">Search</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Add New Notes</a>
+          </div>
+        </li>
+
+        <!-- study -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Study
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Flash Cards</a>
+            <a class="dropdown-item" href="#">Quiz Central</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Study Session</a>
+          </div>
+        </li>
+
+        <!-- account -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="#">Settings</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Help</a>
+          </div>
+        </li>
+
         <li class="nav-item">
           <a href="javascript:void(0)" (click)="logout()"
              class="btn btn-inverse btn-bordered navbar-btn nav-link">Logout</a>

@@ -14,8 +14,8 @@ export class NoteDetailComponent implements OnInit {
   public editorConfig = {
     "editable": true,
     "spellcheck": true,
-    "height": "425px",
-    "minHeight": "425px",
+    "height": "auto",
+    "minHeight": "625px",
     "width": "auto",
     "minWidth": "450px",
     "translate": "yes",
